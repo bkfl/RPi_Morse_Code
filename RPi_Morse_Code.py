@@ -1,4 +1,5 @@
-from Tkinter import *
+from tkinter import *
+from tkinter import messagebox
 from gpiozero import LED
 import RPi.GPIO
 
@@ -15,7 +16,7 @@ root.title("RPi: Morse Code")
 def blink():
     input = eInput.get()
     # Check input is between 1 and 12 characters
-    if (1 <= len(input) >= 12):
+    if (1 < len(input) < 13):
         # Check string contains letters only
         if (input.isalpha()):
             
@@ -27,6 +28,17 @@ def blink():
 def close():
     RPi.GPIO.cleanup()
     root.destroy()
+
+# FUNCTIONS
+def morseDot():
+    
+def morseDash():
+
+def morseCharRest():
+    
+
+def morseBlink(char):
+
 
 # WIDGETS
 lbl1 = Label(root, text="Enter a word (12 char max):")
